@@ -77,6 +77,8 @@
       chezmoi
       git
       lazygit
+      mpc
+      mpd
     ];
   };
 
