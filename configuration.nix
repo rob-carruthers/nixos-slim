@@ -60,6 +60,7 @@
     isNormalUser = true;
     extraGroups = [ "dialout" "wheel" ];
     packages = with pkgs; [
+      cantata
       chezmoi
       ghostty
       git
@@ -67,6 +68,7 @@
       lazygit
       mpc
       mpd
+      qt6Packages.qt6ct
       ruff
       swaybg
       tmux
