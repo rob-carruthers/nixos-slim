@@ -86,6 +86,8 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     helix
+    htop
+    lm_sensors
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
