@@ -77,7 +77,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rob= {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "dialout" "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       chezmoi
       git
