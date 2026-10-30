@@ -69,10 +69,8 @@
       mpc
       mpd
       qt6Packages.qt6ct
-      ruff
       swaybg
       tmux
-      ty
       uv
       waybar
       wl-clipboard
