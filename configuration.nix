@@ -101,6 +101,20 @@
 
 
   services.openssh.enable = true;
+  services.avahi = {
+      enable = true;
+      nssmdns4 = true;
+      settings = {
+        publish = {
+          disable-publishing = false;
+          disable-user-service-publishing = false;
+          publish-addresses = true;
+          publish-domain = true;
+          publish-hinfo = true;
+          publish-workstation = true;
+        };
+      };
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
