@@ -90,6 +90,7 @@
     helix
     htop
     lm_sensors
+    starship
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
