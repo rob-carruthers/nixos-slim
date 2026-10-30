@@ -69,6 +69,7 @@
       mpd
       ruff
       swaybg
+      tmux
       ty
       uv
       waybar
