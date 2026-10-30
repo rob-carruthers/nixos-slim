@@ -15,9 +15,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   networking.hostName = "rob-pc"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
@@ -43,7 +40,10 @@
 
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
+  hardware.nvidia = {
+    open = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
