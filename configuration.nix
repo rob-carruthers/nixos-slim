@@ -44,6 +44,12 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
+  environment.etc.inputrc.text = ''
+    $include ${pkgs.bashInteractive}/etc/inputrc
+    "\e[5~": history-search-backward
+    "\e[6~": history-search-forward
+  '';
+
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
