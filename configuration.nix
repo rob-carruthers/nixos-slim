@@ -15,6 +15,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  fileSystems."/mnt/data.disk" = {
+    device = "/dev/disk/by-uuid/E4888080888052CA";
+    fsType = "ntfs3";
+    options = [ "defaults" "noatime" "ro" ];
+  };
+
   networking.hostName = "rob-pc"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
