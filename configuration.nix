@@ -80,10 +80,20 @@
     extraGroups = [ "dialout" "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       chezmoi
+      ghostty
       git
+      labwc
       lazygit
       mpc
       mpd
+      ruff
+      swaybg
+      ty
+      uv
+      waybar
+      wl-clipboard
+      wlr-randr
+      wofi
     ];
   };
 
