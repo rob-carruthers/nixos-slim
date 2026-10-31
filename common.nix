@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -41,18 +46,18 @@
 
   services.openssh.enable = true;
   services.avahi = {
-      enable = true;
-      nssmdns4 = true;
-      settings = {
-        publish = {
-          disable-publishing = false;
-          disable-user-service-publishing = false;
-          publish-addresses = true;
-          publish-domain = true;
-          publish-hinfo = true;
-          publish-workstation = true;
-        };
+    enable = true;
+    nssmdns4 = true;
+    settings = {
+      publish = {
+        disable-publishing = false;
+        disable-user-service-publishing = false;
+        publish-addresses = true;
+        publish-domain = true;
+        publish-hinfo = true;
+        publish-workstation = true;
       };
+    };
   };
   services.pipewire = {
     enable = true;
@@ -62,7 +67,7 @@
   services.getty.autologinOnce = true;
   services.getty.autologinUser = "rob";
 
-  users.users.rob= {
+  users.users.rob = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
