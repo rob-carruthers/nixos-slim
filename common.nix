@@ -62,5 +62,32 @@
   services.getty.autologinOnce = true;
   services.getty.autologinUser = "rob";
 
+  users.users.rob= {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    packages = with pkgs; [
+      chezmoi
+      ghostty
+      git
+      labwc
+      lazygit
+      qt6Packages.qt6ct
+      swaybg
+      tmux
+      uv
+      waybar
+      wl-clipboard
+      wlr-randr
+      wofi
+    ];
+  };
+
+  environment.systemPackages = with pkgs; [
+    helix
+    htop
+    lm_sensors
+    starship
+  ];
+
   system.stateVersion = "26.05"; # Did you read the comment?
 }
