@@ -74,15 +74,18 @@
       chezmoi
       ghostty
       git
+      gtklock
       labwc
       lazygit
       qt6Packages.qt6ct
       swaybg
+      swayidle
       tmux
       uv
       waybar
       wl-clipboard
       wlr-randr
+      wlopm
       wofi
     ];
   };
