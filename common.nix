@@ -30,6 +30,8 @@
   };
 
   programs.firefox.enable = true;
+  programs.gtklock.enable = true;
+  security.pam.services.gtklock = { };
 
   programs.nix-ld = {
     enable = true;
@@ -72,7 +74,6 @@
       chezmoi
       ghostty
       git
-      gtklock
       labwc
       lazygit
       nil
