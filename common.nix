@@ -77,6 +77,8 @@
       gtklock
       labwc
       lazygit
+      nil
+      nixfmt
       qt6Packages.qt6ct
       swaybg
       swayidle
