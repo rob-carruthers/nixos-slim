@@ -46,6 +46,10 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
+  services.udev.extraRules = ''
+    ACTION=="change", SUBSYSTEM=="power_supply", KERNEL=="apple_mfi_fastcharge*", ATTR{charge_type}="Fast"
+  '';
+
   fileSystems."/mnt/data.disk" = {
     device = "/dev/disk/by-uuid/E4888080888052CA";
     fsType = "ntfs3";
