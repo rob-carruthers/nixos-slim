@@ -1,9 +1,7 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 
 {
+  imports = [ ./users/rob.nix ];
   nixpkgs.config.allowUnfree = true;
 
   boot.loader.systemd-boot.enable = true;
@@ -20,30 +18,6 @@
     "\e[6~": history-search-forward
   '';
 
-  # Enable CUPS to print documents.
-  services.printing = {
-    enable = true;
-    drivers = with pkgs; [
-      cups-filters
-      cups-browsed
-    ];
-  };
-
-  programs.firefox.enable = true;
-  programs.gtklock.enable = true;
-  security.pam.services.gtklock = { };
-
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [
-      libpulseaudio
-    ];
-  };
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
-
   services.openssh.enable = true;
   services.avahi = {
     enable = true;
@@ -59,37 +33,9 @@
       };
     };
   };
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
 
   services.getty.autologinOnce = true;
   services.getty.autologinUser = "rob";
-
-  users.users.rob = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    packages = with pkgs; [
-      chezmoi
-      ghostty
-      git
-      labwc
-      lazygit
-      nil
-      nixfmt
-      qt6Packages.qt6ct
-      swaybg
-      swayidle
-      tmux
-      uv
-      waybar
-      wl-clipboard
-      wlr-randr
-      wlopm
-      wofi
-    ];
-  };
 
   environment.systemPackages = with pkgs; [
     helix
