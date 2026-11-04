@@ -2,6 +2,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }:
 
@@ -66,5 +67,9 @@
   services.xserver.xkb.layout = "gb";
 
   services.libinput.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    acpi
+  ];
 
 }
