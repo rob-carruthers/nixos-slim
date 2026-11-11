@@ -71,9 +71,12 @@
   services.xserver.xkb.layout = "gb";
 
   services.libinput.enable = true;
+  services.joycond.enable = true;
 
   environment.systemPackages = with pkgs; [
     acpi
+    pcsx2
+    evtest
   ];
 
 }
