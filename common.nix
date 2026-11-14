@@ -19,17 +19,8 @@
     };
 
     loader.efi.canTouchEfiVariables = true;
-    plymouth = {
-      enable = true;
-    };
-
-    consoleLogLevel = 3;
-    kernelParams = [
-      "quiet"
-      "rd.udev.log_level=3"
-      "rd.systemd.show_status=auto"
-    ];
   };
+  services.bootvine.enable = true;
 
   networking.networkmanager.enable = true;
   systemd.services.NetworkManager-wait-online.enable = false;
