@@ -9,6 +9,7 @@
 {
   imports = [
     ../../common.nix
+    ../../modules/battery-conservative.nix
     ../../modules/bluetooth.nix
     ../../modules/desktop.nix
     ../../modules/development.nix
