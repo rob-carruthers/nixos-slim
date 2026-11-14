@@ -1,8 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, modulesPath, ... }:
 
 {
-  imports = [ ./users/rob.nix ];
+  imports = [
+    ./users/rob.nix
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
+
   nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   boot = {
     loader.systemd-boot = {
