@@ -4,12 +4,24 @@
   imports = [ ./users/rob.nix ];
   nixpkgs.config.allowUnfree = true;
 
-  boot.loader.systemd-boot = {
-    enable = true;
-    configurationLimit = 10;
-  };
+  boot = {
+    loader.systemd-boot = {
+      enable = true;
+      configurationLimit = 10;
+    };
 
-  boot.loader.efi.canTouchEfiVariables = true;
+    loader.efi.canTouchEfiVariables = true;
+    plymouth = {
+      enable = true;
+    };
+
+    consoleLogLevel = 3;
+    kernelParams = [
+      "quiet"
+      "rd.udev.log_level=3"
+      "rd.systemd.show_status=auto"
+    ];
+  };
 
   networking.networkmanager.enable = true;
 
