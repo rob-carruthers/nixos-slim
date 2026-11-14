@@ -18,6 +18,8 @@
       configurationLimit = 10;
     };
 
+    consoleLogLevel = 3;
+
     loader.efi.canTouchEfiVariables = true;
   };
   services.bootvine.enable = true;
