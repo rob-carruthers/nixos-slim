@@ -11,6 +11,7 @@
     ../../common.nix
     ../../modules/desktop.nix
     ../../modules/development.nix
+    ../../modules/mpd.nix
     ../../modules/printing.nix
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -87,5 +88,4 @@
       mpd
     ];
   };
-
 }
